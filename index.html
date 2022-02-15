@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Korean">
+    <title>DJET LCD</title>
+  </head>
+  <body>
+    
+
+		<div id="content" class="bg-center bg-cover bg-no-repeat h-screen" style="background-image: url('https://i.imgur.com/8MjNYSp.png');">
+			<div class="p-4 md:px-6 md:py-8 relative">
+		<div class="sm:flex sm:items-center sm:justify-between">
+				<img src="https://i.imgur.com/o6aT6i8.png" class="mr-4 h-10" />
+
+			<ul class="flex flex-wrap items-center mb-6 sm:mb-0">
+				<li>
+					<span id="ClockArea" class="mr-4 text-3xl text-gray-100 hover:underline md:mr-6 dark:text-gray-400"></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="h-full items-center justify-center flex flex-col">
+		<div class="items-center justify-center w-full p-8 flex flex-col">
+			<div class="text-white items-center justify-center w-full p-5 h-auto flex flex-col col-span-12">
+            <!--로딩용 로고-->
+			<div id="loadingCont">
+			<img src="https://i.imgur.com/o6aT6i8.png" class="h-48" />
+			</div>
+			<!--안내-->
+			<div id="StnNoticeCont" class="hidden">
+			<h2 class="text-7xl text-center font-bold mt-2 mb-20" id="StnNoticeTxt">차내에서는 <span class="text-yellow-300">마스크를 착용</span>하고, <span class="text-yellow-300">백신 접종</span>을 통해 코로나19 감염을 예방합시다!</h2>
+			</div>
+			<!--코로나19-->
+			<div id="CovidNoticeCont" class="hidden">
+			<h2 class="text-5xl text-center mt-2 mb-12 mr-32">코로나19 현황 (2/15 0시기준)</h2>
+			<div class="flex block mb-12">
+				<div class="w-1/2">
+				<h3 class="font-bold text-5xl">확진자(+1577명)</h3>
+				<h3 class="text-3xl mt-2">TOTAL INFECTIONS</h3>
+				</div>
+				<div class="w-1/2">
+				<h3 class="font-bold text-7xl text-yellow-300">33,324명</h3>
+				</div>
+				</div>
+					<div class="flex block mb-12">
+				<div class="w-1/2">
+				<h3 class="font-bold text-5xl">누적 사망자</h3>
+				<h3 class="text-3xl mt-2">TOTAL DEATHS</h3>
+				</div>
+				<div class="w-1/2">
+				<h3 class="font-bold text-7xl text-yellow-300">7,163명</h3>
+				</div>
+				</div>
+			</div>
+			<!--곧도착-->
+			<div id="ComingSoonCont" class="hidden">
+			<div class="flex block mb-12">
+				<div class="w-1/2">
+				<h3 class="font-bold text-5xl">곧 도착</h3>
+				<h3 class="text-3xl mt-2">Arriving Soon</h3>
+				</div>
+				<div class="w-1/2">
+				<h3 class="font-bold text-7xl text-yellow-300">반 석 행</h3>
+				</div>
+				</div>
+					<div class="flex block mb-12">
+				<div class="w-1/2">
+				<h3 class="font-bold text-5xl">다음 열차</h3>
+				<h3 class="text-3xl mt-2">Next Train</h3>
+				</div>
+				<div class="w-1/2">
+				<h3 class="font-bold text-7xl text-blue-300">12:25</h3>
+				</div>
+				</div>
+			</div>
+				</div>
+		</div>
+	</div>
+	</div>
+<style>
+	@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+	.font-bold{
+      font-family:'GmarketSansBold';
+	}
+	*{
+      font-family:'GmarketSansMedium';
+	}
+</style>
+	<script>
+var stnNotice = document.getElementById("StnNoticeCont");
+var covidNotice = document.getElementById("CovidNoticeCont");
+var comingSoon = document.getElementById("ComingSoonCont");
+var loadingCont = document.getElementById("loadingCont");
+var i = 1;
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('ClockArea').innerHTML =  h + ":" + m;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
+function doSetTimeout() {
+  setTimeout(function() {
+loadingCont.style.display = "none";
+   if(i==3){
+	       stnNotice.style.display = "block";
+	covidNotice.style.display = "none";
+	comingSoon.style.display = "none";
+	   i=0;
+   }
+   else if(i==2){
+	       stnNotice.style.display = "none";
+	covidNotice.style.display = "block";
+	comingSoon.style.display = "none";
+   }
+      else if(i==1){
+	       stnNotice.style.display = "none";
+	covidNotice.style.display = "none";
+	comingSoon.style.display = "block";
+   }
+i++;
+	  doSetTimeout();
+	  }, 5000);
+}
+
+
+doSetTimeout();
+
+startTime();
+</script>
+  </body>
+</html>
