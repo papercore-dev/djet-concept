@@ -14,14 +14,14 @@
   <body>
     
 
-		<div id="content" class="bg-center bg-cover bg-no-repeat h-screen" style="background-image: url('https://i.imgur.com/8MjNYSp.png');">
+		<div id="content" class="overflow-y-hidden bg-center bg-cover bg-no-repeat h-screen" style="background-image: url('https://i.imgur.com/8MjNYSp.png');">
 			<div class="p-4 md:px-6 md:py-8 relative">
 		<div class="sm:flex sm:items-center sm:justify-between">
-				<img src="https://i.imgur.com/o6aT6i8.png" class="mr-4 h-10" />
+				<img src="https://i.imgur.com/o6aT6i8.png" class="mr-4 h-24" />
 
 			<ul class="flex flex-wrap items-center mb-6 sm:mb-0">
 				<li>
-					<span id="ClockArea" class="mr-4 text-3xl text-gray-100 hover:underline md:mr-6 dark:text-gray-400"></span>
+					<span id="ClockArea" class="mr-4 text-7xl text-gray-100 hover:underline md:mr-6 dark:text-gray-400"></span>
 				</li>
 			</ul>
 		</div>
@@ -31,57 +31,63 @@
 			<div class="text-white items-center justify-center w-full p-5 h-auto flex flex-col col-span-12">
             <!--로딩용 로고-->
 			<div id="loadingCont">
-			<img src="https://i.imgur.com/o6aT6i8.png" class="h-48" />
+			<img src="https://i.imgur.com/o6aT6i8.png" class="h-64" />
 			</div>
 			<!--안내-->
 			<div id="StnNoticeCont" class="hidden">
-			<h2 class="text-7xl text-center font-bold mt-2 mb-20" id="StnNoticeTxt">차내에서는 <span class="text-yellow-300">마스크를 착용</span>하고, <span class="text-yellow-300">백신 접종</span>을 통해 코로나19 감염을 예방합시다!</h2>
+			<h2 class="text-8xl text-center font-bold mt-2 mb-20" id="StnNoticeTxt">차내에서는 <span class="text-yellow-300">마스크를 착용</span>하고, <span class="text-yellow-300">백신 접종</span>을 통해 코로나19 감염을 예방합시다!</h2>
 			</div>
 			<!--코로나19-->
 			<div id="CovidNoticeCont" class="hidden">
-			<h2 class="text-5xl text-center mt-2 mb-12 mr-32">코로나19 현황 (2/15 0시기준)</h2>
-			<div class="flex block mb-12">
+			<h2 class="text-7xl text-center mt-2 mb-12 mr-32">코로나19 현황 (2/15 0시기준)</h2>
+			<div class="flex block mb-12 w-screen text-center">
 				<div class="w-1/2">
-				<h3 class="font-bold text-5xl">확진자(+1577명)</h3>
-				<h3 class="text-3xl mt-2">TOTAL INFECTIONS</h3>
+				<h3 class="font-bold text-7xl">확진자(+1577명)</h3>
+				<h3 class="text-5xl mt-2">TOTAL INFECTIONS</h3>
 				</div>
 				<div class="w-1/2">
-				<h3 class="font-bold text-7xl text-yellow-300">33,324명</h3>
+				<h3 class="font-bold text-8xl text-yellow-300">33,324명</h3>
 				</div>
 				</div>
-					<div class="flex block mb-12">
+					<div class="flex block mb-12 w-screen text-center">
 				<div class="w-1/2">
-				<h3 class="font-bold text-5xl">누적 사망자</h3>
-				<h3 class="text-3xl mt-2">TOTAL DEATHS</h3>
+				<h3 class="font-bold text-7xl">누적 사망자</h3>
+				<h3 class="text-5xl mt-2">TOTAL DEATHS</h3>
 				</div>
 				<div class="w-1/2">
-				<h3 class="font-bold text-7xl text-yellow-300">7,163명</h3>
+				<h3 class="font-bold text-8xl text-yellow-300">7,163명</h3>
 				</div>
 				</div>
 			</div>
 			<!--곧도착-->
 			<div id="ComingSoonCont" class="hidden">
-			<div class="flex block mb-12">
+			<div class="flex block mb-12 w-screen text-center">
 				<div class="w-1/2">
-				<h3 class="font-bold text-5xl">곧 도착</h3>
-				<h3 class="text-3xl mt-2">Arriving Soon</h3>
+				<h3 class="font-bold text-7xl">곧 도착</h3>
+				<h3 class="text-5xl mt-2">Arriving Soon</h3>
 				</div>
 				<div class="w-1/2">
-				<h3 class="font-bold text-7xl text-yellow-300">반 석 행</h3>
+				<h3 class="font-bold text-8xl text-yellow-300">반 석 행</h3>
 				</div>
 				</div>
-					<div class="flex block mb-12">
+					<div class="flex block mb-12 w-screen text-center">
 				<div class="w-1/2">
-				<h3 class="font-bold text-5xl">다음 열차</h3>
-				<h3 class="text-3xl mt-2">Next Train</h3>
+				<h3 class="font-bold text-7xl">다음 열차</h3>
+				<h3 class="text-5xl mt-2">Next Train</h3>
 				</div>
 				<div class="w-1/2">
-				<h3 class="font-bold text-7xl text-blue-300">12:25</h3>
+				<h3 class="font-bold text-8xl text-blue-300">12:25</h3>
 				</div>
 				</div>
 			</div>
 				</div>
 		</div>
+        
+    <div class="absolute w-full bottom-0 right-0">
+        <div class="px-4 py-2 text-white text-xs">
+           DTC LCD Simulator (V1, 국토교통부_지하철실시간정보 서비스)
+        </div>
+    </div>
 	</div>
 	</div>
 <style>
@@ -104,6 +110,7 @@
       font-family:'GmarketSansMedium';
 	}
 </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script>
 var stnNotice = document.getElementById("StnNoticeCont");
 var covidNotice = document.getElementById("CovidNoticeCont");
@@ -154,6 +161,7 @@ i++;
 doSetTimeout();
 
 startTime();
+
 </script>
   </body>
 </html>
